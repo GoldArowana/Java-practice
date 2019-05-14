@@ -4,7 +4,7 @@ import com.aries.learn.designpattern.iterator.without.bean.Book;
 import lombok.Getter;
 
 @Getter
-public class TwoDimensionBookShelf {
+public class TwoDimensionBookshelf {
     private Book[][] books;
     private final int rowSize;
     private final int colSize;
@@ -12,7 +12,7 @@ public class TwoDimensionBookShelf {
     private int currentCol;
     private int currentRow;
 
-    public TwoDimensionBookShelf(int rowSize, int colSize) {
+    public TwoDimensionBookshelf(int rowSize, int colSize) {
         this.rowSize = rowSize;
         this.colSize = colSize;
         this.books = new Book[rowSize][colSize];

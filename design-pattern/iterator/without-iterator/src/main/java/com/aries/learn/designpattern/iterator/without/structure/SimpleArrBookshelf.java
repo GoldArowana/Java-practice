@@ -3,11 +3,11 @@ package com.aries.learn.designpattern.iterator.without.structure;
 import com.aries.learn.designpattern.iterator.without.bean.Book;
 
 
-public class SimpleArrBookShelf {
+public class SimpleArrBookshelf {
     private Book[] books;
     private int size;
 
-    public SimpleArrBookShelf(int cap) {
+    public SimpleArrBookshelf(int cap) {
         books = new Book[cap];
         size = 0;
     }
