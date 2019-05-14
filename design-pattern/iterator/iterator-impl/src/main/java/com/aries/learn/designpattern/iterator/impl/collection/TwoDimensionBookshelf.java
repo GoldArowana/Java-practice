@@ -6,7 +6,7 @@ import com.aries.learn.designpattern.iterator.impl.iter.TwoDimensionBookshelfIte
 import lombok.Getter;
 
 @Getter
-public class TwoDimensionBookshelf implements Aggregate{
+public class TwoDimensionBookshelf implements Aggregate {
     private Book[][] books;
     private final int rowSize;
     private final int colSize;

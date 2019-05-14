@@ -3,19 +3,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>java-practice</artifactId>
+        <artifactId>design-pattern</artifactId>
         <groupId>com.aries.learn</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>design-pattern</artifactId>
+    <artifactId>adapter</artifactId>
     <packaging>pom</packaging>
 
-    <name>design-pattern</name>
+    <name>adapter</name>
     <modules>
-        <module>iterator</module>
-        <module>adapter</module>
+        <module>adapter-class</module>
+        <module>without-adapter-class</module>
+        <module>adapter-interface</module>
+        <module>without-adapter-interface</module>
+        <module>adapter-object</module>
+        <module>without-adapter-object</module>
     </modules>
 
     <properties>
