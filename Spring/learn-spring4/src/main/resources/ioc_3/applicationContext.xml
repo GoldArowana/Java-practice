@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bean1" class="com.aries.learn.spring4.ioc_3.Bean1"/>
+
+    <bean id="bean2" class="com.aries.learn.spring4.ioc_3.Bean2" factory-method="getInstance"/>
+
+    <bean id="bean3Factory" class="com.aries.learn.spring4.ioc_3.Bean3Factory"/>
+    <bean id="bean3" factory-bean="bean3Factory" factory-method="getBean3"/>
+
+    <bean id="bean4" class="com.aries.learn.spring4.ioc_3.Bean4FactoryBean"/>
+</beans>

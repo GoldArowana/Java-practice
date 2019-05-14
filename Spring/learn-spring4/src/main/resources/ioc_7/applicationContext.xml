@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 构造器方式注入参数 -->
+    <bean id="car" class="com.aries.learn.spring4.ioc_7.Car">
+        <constructor-arg name="id" value="10"/>
+        <constructor-arg name="name" value="baoma"/>
+        <constructor-arg name="price" value="500.2"/>
+    </bean>
+
+    <!-- setter方式注入参数 -->
+    <bean id="person" class="com.aries.learn.spring4.ioc_7.Person">
+        <property name="id" value="20"/>
+        <property name="name" value="xiaoming"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <!-- p命名空间方式 -->
+    <bean id="person2" class="com.aries.learn.spring4.ioc_7.Person" p:id="123" p:name="xiaohua" p:car-ref="car"/>
+
+
+    <!-- SpEL表达式的用法 -->
+    <!-- 需要car的id、name、car的属性都有相应的getter-->
+    <!-- SpEL还可以调用相应的方法，比如下面的toUpperCase()-->
+    <bean id="person3" class="com.aries.learn.spring4.ioc_7.Person" p:id="#{car.id}" p:name="#{car.name.toUpperCase()}"
+          p:car="#{car}"/>
+
+
+    <!-- 对集合赋值 -->
+    <bean id="collectionBean" class="com.aries.learn.spring4.ioc_7.CollectionBean">
+        <property name="list">
+            <list>
+                <value>Tom</value>
+                <value>Jerry</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>11</value>
+                <value>22</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="a" value="1"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="name">张三</prop>
+                <prop key="age">60</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

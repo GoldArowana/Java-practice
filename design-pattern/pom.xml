@@ -16,6 +16,16 @@
     <modules>
         <module>iterator</module>
         <module>adapter</module>
+        <module>template-method</module>
+        <module>factory-method</module>
+        <module>simple-factory</module>
+        <module>singleton</module>
+        <module>prototype</module>
+        <module>builder</module>
+        <module>abstract-factory</module>
+        <module>bridge</module>
+        <module>strategy</module>
+        <module>composite</module>
     </modules>
 
     <properties>
@@ -24,4 +34,10 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 </project>

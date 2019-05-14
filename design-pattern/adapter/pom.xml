@@ -20,6 +20,7 @@
         <module>without-adapter-interface</module>
         <module>adapter-object</module>
         <module>without-adapter-object</module>
+        <module>adapter-object-impl2</module>
     </modules>
 
     <properties>
@@ -28,4 +29,10 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 </project>

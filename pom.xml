@@ -9,8 +9,31 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>thrift</module>
         <module>design-pattern</module>
+        <module>vertx</module>
+        <module>zookeeper</module>
+        <module>consistent</module>
+        <module>concurrent</module>
+        <module>algorithm</module>
+        <module>DataStructure</module>
+        <module>DDD</module>
+        <module>RxJava</module>
+        <module>Spring</module>
+        <module>SpringBoot</module>
+        <module>config</module>
+        <module>network</module>
+        <module>database-about</module>
+        <module>functional</module>
+        <module>bigdata</module>
+        <module>common</module>
+        <module>mq</module>
+        <module>serialize-and-rpc</module>
+        <module>web-framework</module>
+        <module>template-engine</module>
+        <module>SpringCloud</module>
+        <module>test-framework</module>
+        <module>SOFAStack</module>
+        <module>actor-model</module>
     </modules>
 
     <name>java-practice</name>
@@ -21,14 +44,38 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-
     <repositories>
+        <repository>
+            <id>ali-maven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>repo2</id>
+            <name>Mirror from Maven Repo2</name>
+            <url>http://repo2.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
         <repository>
             <id>maven-repo-master</id>
             <url>https://raw.github.com/goldarowana/maven-repo/master/</url>
             <snapshots>
                 <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven-repo-master-kristin</id>
+            <url>https://raw.github.com/KristinLee1997/maven-repo/master/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
