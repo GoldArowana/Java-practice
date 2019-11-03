@@ -6,3 +6,5 @@
 **/*.out
 **/*.versionsBackup
 
+database-about/redis/src/test/resource/conf.properties
+
