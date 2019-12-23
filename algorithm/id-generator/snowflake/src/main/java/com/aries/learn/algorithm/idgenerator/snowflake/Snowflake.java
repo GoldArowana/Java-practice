@@ -22,7 +22,7 @@ public class Snowflake {
         if (workerId > Conf.MAX_WORKER_ID || workerId < 0) {
             throw new IllegalArgumentException(String.format("workerId错误。 不能大于%d, 也不能小于0", Conf.MAX_WORKER_ID));
         } else if (dataCenterId > Conf.MAX_DATA_CENTER_ID || dataCenterId < 0) {
-            throw new IllegalArgumentException(String.format("dataCenterId。 不能大于%d, 也不能小于0", Conf.MAX_DATA_CENTER_ID));
+            throw new IllegalArgumentException(String.format("dataCenterId错误。 不能大于%d, 也不能小于0", Conf.MAX_DATA_CENTER_ID));
         }
         this.workerId = workerId;
         this.dataCenterId = dataCenterId;
@@ -37,16 +37,17 @@ public class Snowflake {
             TimeUtils.loopUntil(this.lastTimeStamp);
         }
 
-        //如果是同一毫秒内生成过id，那么进行毫秒内序列
+        //如果是同一毫秒内生成过id，那么进行毫秒内序列自增。也就是sequence++ , 但是要模上MAX_SEQUENCE_ID
         if (nowTimeStamp == this.lastTimeStamp) {
             sequence = (sequence + 1) & Conf.MAX_SEQUENCE_ID;
             if (sequence == 0) {
-                nowTimeStamp = TimeUtils.loopUntil(this.lastTimeStamp);
+                nowTimeStamp = TimeUtils.loopUntil(this.lastTimeStamp + 1);
             }
-        } else { //同一毫秒内没有生成过id。序列号返回0即可。
+        } else { //同一毫秒内没有生成过id，序列号返回0。也就是说下一毫秒要把sequence清零。
             sequence = 0;
         }
-
+        this.lastTimeStamp = nowTimeStamp;
+        System.out.println(sequence);
         return ((nowTimeStamp - Conf.START_STAMP) << Conf.TIME_STAMP_LEFT_SHIFT)
                 | (dataCenterId << Conf.DATA_CENTER_ID_SHIFT)
                 | (workerId << Conf.WORKER_ID_SHIFT)

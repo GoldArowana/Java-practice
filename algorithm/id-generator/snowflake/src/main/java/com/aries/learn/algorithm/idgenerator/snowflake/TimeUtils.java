@@ -5,7 +5,7 @@ package com.aries.learn.algorithm.idgenerator.snowflake;
  */
 public class TimeUtils {
     static long loopUntil(long timeStamp) {
-        for (long nowTimeStamp = getNowTime(); nowTimeStamp <= timeStamp; nowTimeStamp = getNowTime()) ;
+        for (long nowTimeStamp = getNowTime(); nowTimeStamp < timeStamp; nowTimeStamp = getNowTime()) ;
 
         return getNowTime();
     }
